@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .control-row {
@@ -12,17 +14,21 @@
 }
 
 .game-controls button {
-  width: 100px;
-  text-align: center;
+  width: 80px;
+  height: 50px;
   background-color: #61dafb;
   color: #282c34;
   border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 1em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 80px;
+  transition: all 0.2s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .game-controls button:hover {
@@ -32,12 +38,39 @@
 
 .game-controls button:active {
   transform: translateY(0);
+  background-color: #3d8499;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .game-controls {
+    margin-top: 10px;
+  }
+
   .game-controls button {
-    padding: 8px 16px;
-    min-width: 60px;
+    width: 70px;
+    height: 45px;
     font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .control-row {
+    gap: 8px;
+  }
+}
+
+@media (max-height: 600px) {
+  .game-controls {
+    margin-top: 5px;
+  }
+
+  .game-controls button {
+    width: 60px;
+    height: 40px;
+    font-size: 0.8em;
+    padding: 6px;
+  }
+
+  .control-row {
+    gap: 6px;
   }
 } 

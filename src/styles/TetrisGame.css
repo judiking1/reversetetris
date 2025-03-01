@@ -9,6 +9,7 @@
   font-family: 'Arial', sans-serif;
   padding: 10px;
   box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 .game-wrapper {
@@ -75,10 +76,31 @@
   }
 }
 
-@media (max-height: 600px) {
+@media (max-width: 768px) {
+  .game-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .cell {
     width: 20px;
     height: 20px;
+  }
+
+  .game-board {
+    padding: 3px;
+  }
+
+  .stats {
+    font-size: 1em;
+    gap: 10px;
+  }
+}
+
+@media (max-height: 600px) {
+  .cell {
+    width: 15px;
+    height: 15px;
   }
   
   .game-controls button {
@@ -88,6 +110,11 @@
   }
   
   .game-content {
-    gap: 10px;
+    gap: 5px;
+  }
+
+  .stats {
+    font-size: 0.9em;
+    gap: 8px;
   }
 }
